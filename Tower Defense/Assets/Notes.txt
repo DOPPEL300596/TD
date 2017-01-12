@@ -1,0 +1,144 @@
+/*
+	This section is to explain details about tower defense and its tutorial.
+	
+	Ctrl+H to find and replace. It's useful, seriously.
+	
+	How to scale sprite:
+	
+	1. Click the sprite, or spritesheet.
+	2. Change the 'pixels per unit' at the Inspector. The bigger the value, the smaller the size.
+	3. Click 'apply'.
+	
+	[Prefab]
+	
+	Prefab is a pre-established game object which parameters can be set according to the uses.
+	Prefab stands for 'pre-fabricated', it is used to create game object from scripts.
+	
+	It can also be used to instantiate game objects with different values.
+	
+	How to make prefab (sprite):
+	1. Drag and drop sprite from resource to Hierarchy
+	2. Create new folder named 'Prefabs'
+	3. From Hierarchy, re-drag and drop to the folder
+	4. Delete sprite from Hierarchy
+	
+	How to make an array of prefab:
+	1. Create an array of GameObject, then instantiate it.
+	
+	[Tile Prefab]
+	The size of array must match to number of sprites.
+	
+	
+	[Level Manager] 
+	
+	Class LevelManager is responsible of creating levels throughout the game.
+	
+	[Tiles]
+	Each tile needs to have 'Top Left' pivot point.
+	
+	[Map from Text]
+	The map can be generated from .txt file(s).
+	
+	Clue:
+	1. Use prefab index to determine which tile will be placed
+	2. Use separator like '-' to separate the line (something like '\n')
+	
+	If Environment.NewLine doesn't work, use '\n' instead.
+	
+	[Camera Movement]
+	In this video, we are going to add some movement to our camera.
+	Because sometimes, the level is actually larger than the camera/frame viewport.
+	
+	We need to somehow manage to move the camera, so we can see the whole level,
+	and not bound to have the level with exact same size of the camera.
+	
+	We can actually make levels as large as we want, and not having problem exploring it
+	using camera movement.
+	
+	Difference between GetKey() and GetKeyDown()
+	
+	GetKeyDown() only takes one input at a time.
+	GetKey() allows the player to simultaneously take input (by holding button, etc.)
+	
+	
+	Viewport = camera's point of view.
+	When you click a main camera and there's a white outline, that's the range of viewport.
+	
+	Index:
+	Bottom Left		= 0.0
+	Top Right		= 1.1
+	Bottom Right	= 1.0
+	Top Left		= 0.1
+	
+	
+	[Dictionary]
+	Dictionary is a type of collection, that is used for storing items or objects under a 'key' and 'value' pair.
+	
+	'Key' is used to access something in Dictionary.
+	Example:
+	
+		We need a tile from position (3, 10).
+		The we 'ask' the dictionary about tile at position (3,10)
+		
+	In C#, Dictionary must be imported by using System.Collections.Generic;
+	
+	[Generics]
+	Basically, generic is a procedure which parameters are based on reference.
+	The datatype is also polymorphic, meaning the parameters can have different datatype.
+	
+	Using <brackets>, is to determine what datatype will be use until the procedure ends.
+	
+	How to declare procedure:
+	
+	<modifier> void <procedure_name> <<dummy datatype>> (ref dummy <param1>, ref dummy <param2>, ...){
+		insert your code here...
+	}
+	
+	How to call:
+	
+	<procedure_name><<datatype>>(ref <param1>, ref <param2>);
+	
+	This way, we can actually 'duplicate' the same procedure without being bothered by its datatype.
+	
+	
+	[Singleton]
+	Singleton pattern is something that makes us easier to access a specific script from other classes.
+	And make sure that is only one instance from that specific 'object'.
+	
+	For example, we have one LevelManager.cs
+	If we make it into a Singleton, it will be way easier for us to access the script from other place.
+	
+	For example, if we go to TileScript.cs
+	
+	
+	[Canvas, Panel, Button]
+	
+	To create a button, click on hierarchy and go to UI, then select 'Button'.
+	This also creates a canvas and an event system.
+	
+	The event system handles navigations, clicks, etc on different buttons.
+	Canvas is a parent object of button.
+	
+	This is because all UI elements in Unity need to be under a canvas so they can be rendered on screen.
+	If the button or any UI component is outside the canvas, it won't be visible, but still exists.
+	
+	So, make sure that every UI component is a child of canvas.
+	
+	Panel is used to contain buttons.
+	Right click the canvas and create an image.
+	
+	This image is going to be a placeholder for all buttons. 
+	Right click on the image part, and remove components. (If there is already a custom-made button).
+	
+	Rename it to 'Tower Panel'.
+	
+	[Text]
+	On a canvas, create a text and change its font. 
+	
+	To create a currency, first we need to set to the rich text format,
+	and then create a tag. 
+	The tag is somewhat similiar to HTML or PHP script. 
+	
+	Without the rich text, the tag will be read as normal text and not tag. 
+			
+*/
